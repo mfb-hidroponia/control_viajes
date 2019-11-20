@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Control de Viajes de Invernadero a Planta</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--Refresh script-->
+    <!--<meta http-equiv="refresh" content="30">-->
+  </head>
+
+  <body>
+    <div class="container text-center my-4">
+
+      <!--<a class="btn btn-primary mb-4" href="#" onclick='location.reload(true); return false;' role="button" target="_blank" >Click to see the source sheet</a>-->
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5 mb-4">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand"><img src="http://megafrescos.com/images/icon/logo-mega.svg" height="30" alt="mfb logo"></a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+      class="navbar-toggler-icon"></span></button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://megafrescos.com">Megafrescos <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="viajes.html">Control de Viajes de Invernadero a Planta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick='location.reload(true); return false;'>Refrescar</a>
+        </li>
+
+      <!-- Dropdown 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>-->
+
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <form class="form-inline">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+<p class="font-weight-bold">Control de Viajes de Invernadero a Planta</p>
+      <!-- Table  -->
+      <table class="table table bordered table-striped" id="testTable">
+        <!-- Table head -->
+        <thead>
+          <tr>
+            <th>Cosecha</th>
+            <th>Cajas</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <!-- Table head -->
+
+        <!-- Table body -->
+        <tbody id="demo">
+
+
+        </tbody>
+        <!-- Table body -->
+      </table>
+      <!-- Table  -->
+
+    </div>
+
+    <!-- Start your project here-->
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script type="text/javascript">
+      var url = "https://script.googleusercontent.com/macros/echo?user_content_key=RExoU-j0m6DHYIXrFwF68a7zLd_s6wPKeFjNW9kCoYawY3G7yaaZUdH2dMp6sOLK3QyuTxpS7-t3qYbwmjmlrnoIxFRXxgvnm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPUl8uaQ748hbC3RpMeOAafMHWUaLv5af7SblrGPI-C__zsHZXfig2aVzJwKhI83qUW-dnclfdIe&lib=MyQ_piVCKlU3GvI2-EEW5XNagCCj8MHnP"
+      $.getJSON(url, function(data) {
+
+        var i;
+        for (i = 0; i < data.records.length; i++) {
+
+          var crop = data.records[i].crop;
+          var amount = data.records[i].amount;
+          var full_date = data.records[i].full_date;
+
+          document.getElementById('demo').innerHTML += ('<tr>' + '<td>' + crop + '</td>' + '<td>' + amount + '</td>' + '<td>' + full_date + '</td>' + '</tr>');
+        }
+      });
+    </script>
+  </body>
+
+</html>
